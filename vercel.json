@@ -3,21 +3,36 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "genesis-atlas-puce.vercel.app" }],
-      "destination": "https://atlas.sayangupta.in/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "genesis-atlas-puce.vercel.app"
+        }
+      ],
+      "destination": "https://atlas.sayangupta.in/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "genesis-atlas-sayan-guptas-projects-db1f000d.vercel.app" }],
-      "destination": "https://atlas.sayangupta.in/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "genesis-atlas-sayan-guptas-projects-db1f000d.vercel.app"
+        }
+      ],
+      "destination": "https://atlas.sayangupta.in/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "genesis-atlas-git-main-sayan-guptas-projects-db1f000d.vercel.app" }],
-      "destination": "https://atlas.sayangupta.in/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "genesis-atlas-git-main-sayan-guptas-projects-db1f000d.vercel.app"
+        }
+      ],
+      "destination": "https://atlas.sayangupta.in/$1",
       "permanent": true
     }
   ],
@@ -25,7 +40,10 @@
     {
       "source": "/(.*)\\.(css|js|svg)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
