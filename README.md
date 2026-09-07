@@ -142,3 +142,10 @@ matters because WhatsApp declines to fetch a preview image much over 300 KB.
 The card carries the chapter counts, so it needs regenerating when those change.
 `og:url`, `og:image`, `twitter:image` and the canonical link are all absolute and
 point at `atlas.sayangupta.in`. If the domain ever moves, update all four.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+The DM Sans typeface is served from Google Fonts under the SIL Open Font License
+and is not covered by this repository's license.
