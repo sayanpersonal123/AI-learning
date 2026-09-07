@@ -1,3 +1,4 @@
+import {foundationScenes} from './foundations.js';
 // Additional chapters use the same lesson contract as the original atlas.
 export const newLessons = [
 {nav:'Reinforcement learning',title:'Try an outcome.<br>Learn from its reward.',tag:'TRAINING',intro:'A policy is a model that chooses outputs or actions. Reinforcement learning updates that policy using reward signals from sampled outcomes. In language models, a rollout can be a complete generated response.',key:'Reward shapes the policy',take:'Sampling creates rollouts. Scoring assigns rewards. A policy objective, gradients and an optimizer change weights. This is distinct from an agent merely retrying a task.',lab:'rl',deep:'RLHF, verifiable rewards, and DPO',body:'RLHF can learn a reward model from human comparisons, then use it for policy optimization. Verifiable rewards can score checkable outcomes such as test results. Algorithms differ in their use of baselines, clipping and reference-policy penalties. DPO optimizes directly from preference pairs; it is not an online rollout-and-reward RL algorithm.',extra:'The reward is not the goal itself',more:'A convenient score may be an imperfect proxy for useful behavior. Reward hacking, biased feedback and weak checks can teach unwanted shortcuts. Evaluate on independent tasks and inspect failures. The experiment here is exact expected-reward optimization for a two-action toy policy, not PPO, GRPO or a frontier training run.',source:'rl'},
@@ -141,3 +142,5 @@ N('Evidence / ground truth','records',[-1,-1.5,2],'Use appropriate reference mat
 N('Check + diagnose','loss',[2,0,0],'Test the candidates and distinguish generation, retrieval and tool failures.','pass / fail + reason'),
 N('Accept or revise','merge',[4,0,1],'Return a supported result or revise the application and retest. A test result does not establish universal reliability.','checked result / next iteration')],[[0,1],[1,3],[2,3],[3,4],[4,1]],[0,1,2,3,4],'The lab checks a numeric answer exactly. It does not claim to automatically verify all natural-language facts.')
 };
+
+Object.assign(microScenes, foundationScenes);

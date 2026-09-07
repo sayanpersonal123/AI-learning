@@ -1,7 +1,10 @@
 # GENESIS — The AI Atlas
 
-An interactive 3D atlas of generative AI: 22 stops covering training, transformers,
-reinforcement learning, agents, retrieval, graphs and multimodal generation.
+An interactive atlas of AI, from first principles to generative systems: 28 chapters
+and 26 expanded 3D scenes. Opens with the foundations — what AI is, machine learning,
+neural networks, deep learning, matrix multiplication — then follows the generative
+journey through training, transformers, reinforcement learning, agents, retrieval,
+graphs and multimodal generation.
 
 **Live:** https://genesis-atlas-puce.vercel.app
 
@@ -14,6 +17,7 @@ A dependency-free static site. No build step, no bundler, no backend.
 | `index.html` | Page shell, header, chapter rail, reading-room markup |
 | `style.css` | All styling and the design tokens (`--bg`, `--mint`, `--violet`, `--amber`) |
 | `app.js` | Entry point (ES module): canvas scene, camera, chapter routing |
+| `foundations.js` | The "start here" foundations chapters and their scenes |
 | `chapters.js` | Chapter and micro-scene content data |
 | `expansion.js` | The "inside this subsystem" expanded views |
 | `favicon.svg` | Brand mark |
