@@ -63,6 +63,12 @@ in `index.html` or the previews will keep pointing at the old host.
 
 Pushes to `main` deploy to production automatically via Vercel.
 
+`atlas.sayangupta.in` is the canonical host. The three stable `*.vercel.app`
+aliases 308 to it, configured as host-matched `redirects` in `vercel.json`, so the
+site answers on one URL and search engines consolidate on it. Per-deployment
+URLs (`genesis-atlas-<hash>-*.vercel.app`) and branch previews are deliberately
+left alone, so a preview can still be checked before it is promoted.
+
 Asset filenames are not content-hashed, so `vercel.json` sets
 `Cache-Control: public, max-age=0, must-revalidate` on the CSS and JS. Leave that
 in place, or visitors will be served stale JavaScript after an update.
