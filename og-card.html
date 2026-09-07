@@ -1,0 +1,126 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=block" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a1118; --panel:#101922; --line:#23303a; --text:#edf2f4;
+    --muted:#9aaab7; --mint:#82e5b5; --violet:#b6a3ff; --amber:#f3bd71;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    position:relative; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:60px 64px;
+  }
+  /* depth: mint glow behind the scene, cool wash at the base */
+  .glow{
+    position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(760px 520px at 76% 46%, rgba(130,229,181,.20), transparent 66%),
+      radial-gradient(620px 460px at 96% 88%, rgba(182,163,255,.14), transparent 70%),
+      radial-gradient(900px 600px at 8% 4%, rgba(130,229,181,.06), transparent 72%);
+  }
+  /* faint ground grid, faded out toward the top */
+  .grid{
+    position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:
+      linear-gradient(rgba(35,48,58,.85) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(35,48,58,.85) 1px, transparent 1px);
+    background-size:60px 60px;
+    -webkit-mask-image:linear-gradient(to bottom, transparent 8%, #000 78%);
+            mask-image:linear-gradient(to bottom, transparent 8%, #000 78%);
+  }
+
+  header{position:relative; display:flex; align-items:center; gap:15px}
+  .mark{
+    width:46px; height:46px; border-radius:12px;
+    background:linear-gradient(150deg,#16222c,#0d151d);
+    border:1px solid #2b3b47;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--mint); font-size:25px; line-height:1;
+    box-shadow:0 0 0 1px rgba(130,229,181,.10), 0 12px 30px -14px rgba(0,0,0,.9);
+  }
+  .wordmark{font-size:29px; font-weight:700; letter-spacing:.19em}
+  .sub{
+    font-size:13px; font-weight:500; letter-spacing:.3em;
+    color:var(--muted); padding-left:15px; margin-left:4px;
+    border-left:1px solid var(--line);
+  }
+
+  main{position:relative; max-width:660px; margin-bottom:4px}
+  .eyebrow{
+    font-size:14.5px; font-weight:700; letter-spacing:.22em;
+    color:var(--mint); margin-bottom:26px;
+  }
+  h1{
+    font-size:104px; font-weight:700; line-height:.96;
+    letter-spacing:-.035em; margin-bottom:26px;
+  }
+  h1 .dot{color:var(--mint)}
+  .tagline{
+    font-size:27px; font-weight:400; line-height:1.42; color:#c9d6de;
+    letter-spacing:-.008em;
+  }
+
+  footer{position:relative; display:flex; align-items:center; gap:13px}
+  .chip{
+    font-size:16.5px; font-weight:500; color:#dbe6ec;
+    background:rgba(16,25,34,.86); border:1px solid var(--line);
+    border-radius:999px; padding:11px 21px; white-space:nowrap;
+    display:flex; align-items:center; gap:10px;
+  }
+  .chip b{font-weight:700; color:#fff}
+  .dotk{width:9px; height:9px; border-radius:50%; flex:none}
+
+  /* isometric node clusters echoing the atlas scene */
+  .scene{position:absolute; right:-30px; top:118px; width:600px; height:420px}
+  .cluster{position:absolute; transform:rotateX(58deg) rotateZ(-45deg); transform-style:preserve-3d}
+  .slab{
+    position:absolute; border-radius:5px;
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 22px 44px -20px rgba(0,0,0,.85);
+  }
+</style></head><body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="scene">
+    <div class="cluster" style="left:250px; top:20px">
+      <div class="slab" style="width:112px;height:112px;background:linear-gradient(140deg,rgba(182,163,255,.92),rgba(120,96,220,.72))"></div>
+      <div class="slab" style="width:112px;height:112px;left:16px;top:-16px;background:linear-gradient(140deg,rgba(182,163,255,.62),rgba(120,96,220,.42))"></div>
+      <div class="slab" style="width:112px;height:112px;left:32px;top:-32px;background:linear-gradient(140deg,rgba(182,163,255,.34),rgba(120,96,220,.2))"></div>
+    </div>
+    <div class="cluster" style="left:58px; top:150px">
+      <div class="slab" style="width:96px;height:96px;background:linear-gradient(140deg,rgba(130,229,181,.92),rgba(58,178,130,.7))"></div>
+      <div class="slab" style="width:96px;height:96px;left:15px;top:-15px;background:linear-gradient(140deg,rgba(130,229,181,.55),rgba(58,178,130,.34))"></div>
+    </div>
+    <div class="cluster" style="left:398px; top:236px">
+      <div class="slab" style="width:74px;height:74px;background:linear-gradient(140deg,rgba(243,189,113,.9),rgba(200,140,60,.66))"></div>
+      <div class="slab" style="width:74px;height:74px;left:13px;top:-13px;background:linear-gradient(140deg,rgba(243,189,113,.5),rgba(200,140,60,.3))"></div>
+    </div>
+    <div class="cluster" style="left:196px; top:296px">
+      <div class="slab" style="width:88px;height:88px;background:linear-gradient(140deg,rgba(110,160,220,.72),rgba(58,104,168,.5))"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="mark">✳</div>
+    <div class="wordmark">GENESIS</div>
+    <div class="sub">THE AI ATLAS</div>
+  </header>
+
+  <main>
+    <div class="eyebrow">FROM FIRST PRINCIPLES TO GENERATIVE SYSTEMS</div>
+    <h1>Inside AI<span class="dot">.</span></h1>
+    <div class="tagline">Understand the basics. Follow the data.<br>Explore what comes next.</div>
+  </main>
+
+  <footer>
+    <div class="chip"><span class="dotk" style="background:var(--mint)"></span><b>28</b> chapters</div>
+    <div class="chip"><span class="dotk" style="background:var(--violet)"></span><b>26</b> interactive 3D deep dives</div>
+    <div class="chip"><span class="dotk" style="background:var(--amber)"></span>Hands-on examples</div>
+  </footer>
+</body></html>

@@ -21,6 +21,8 @@ A dependency-free static site. No build step, no bundler, no backend.
 | `chapters.js` | Chapter and micro-scene content data |
 | `expansion.js` | The "inside this subsystem" expanded views |
 | `favicon.svg` | Brand mark |
+| `og.jpg` | 1200x630 social share card |
+| `og-card.html` | Source for `og.jpg` (not deployed; see below) |
 | `vercel.json` | Clean URLs and revalidating cache headers |
 
 The only external dependency is the DM Sans stylesheet from Google Fonts,
@@ -36,6 +38,26 @@ python3 -m http.server 8791
 ```
 
 Then open http://localhost:8791.
+
+## The social share card
+
+`og.jpg` is the Open Graph / Twitter card image, referenced by absolute URL in the
+`<head>`. It is generated from `og-card.html`, which is excluded from deploys via
+`.vercelignore`. To regenerate after a copy change:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --virtual-time-budget=8000 \
+  --screenshot=og.png og-card.html
+```
+
+Then convert `og.png` to `og.jpg` — the JPEG is ~66 KB against ~360 KB for the PNG,
+which matters because WhatsApp will not fetch a preview image much over 300 KB.
+
+Note that `og:url`, `og:image` and the canonical link are absolute URLs pointing at
+`genesis-atlas-puce.vercel.app`. If a custom domain is added, update all four in
+`index.html` or the previews will keep pointing at the old host.
 
 ## Deploying
 
