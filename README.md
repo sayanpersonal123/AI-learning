@@ -6,7 +6,7 @@ neural networks, deep learning, matrix multiplication — then follows the gener
 journey through training, transformers, reinforcement learning, agents, retrieval,
 graphs and multimodal generation.
 
-**Live:** https://genesis-atlas-puce.vercel.app
+**Live:** https://atlas.sayangupta.in
 
 ## Structure
 
@@ -55,9 +55,9 @@ Then open http://localhost:8791.
 Then convert `og.png` to `og.jpg` — the JPEG is ~66 KB against ~360 KB for the PNG,
 which matters because WhatsApp will not fetch a preview image much over 300 KB.
 
-Note that `og:url`, `og:image` and the canonical link are absolute URLs pointing at
-`genesis-atlas-puce.vercel.app`. If a custom domain is added, update all four in
-`index.html` or the previews will keep pointing at the old host.
+Note that `og:url`, `og:image`, `twitter:image` and the canonical link are absolute
+URLs pointing at `atlas.sayangupta.in`. If the domain changes again, update all four
+in `index.html` or the previews will keep pointing at the old host.
 
 ## Deploying
 
